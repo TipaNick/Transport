@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SOURCE_FILES
 	source/main.cpp
 	source/transport.h
+	source/transportFactory.h source/transportFactory.cpp
 )
 
 add_executable(Transport
