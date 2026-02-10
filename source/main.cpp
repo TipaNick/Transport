@@ -1,5 +1,9 @@
 #include <iostream>
 
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
 #include "transportFactory.h"
 
 int validateNumber(const char* str) {
@@ -14,8 +18,11 @@ int validateNumber(const char* str) {
 
 int main(int argc, char* argv[])
 {
-    //for correct russian output 
-    setlocale(LC_ALL, "Russian");
+    //for correct russian output in windows
+    #ifdef _WIN32
+        SetConsoleOutputCP(CP_UTF8);
+    #endif
+    
 
     auto bike = TransportFactory::createBike(2, 120, "Electric");
     auto scooter = TransportFactory::createScooter(2, 15);
