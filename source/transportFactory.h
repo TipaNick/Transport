@@ -2,6 +2,8 @@
 
 #include "transport.h"
 
+#include <memory>
+
 using namespace std;
 
 class TransportFactory
